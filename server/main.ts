@@ -1,15 +1,16 @@
-import { Meteor } from "meteor/meteor";
-import { TasksCollection, TTask } from "/imports/api/TasksCollection";
+import { Meteor } from 'meteor/meteor'
+import { TasksCollection, type TTask } from '/imports/api/TasksCollection'
 
-export const insertTask = (task: TTask) => TasksCollection.insert(task);
+export const insertTask = (task: TTask): string => TasksCollection.insert(task)
 
 Meteor.startup(async () => {
-    TasksCollection.allow({insert() {
-        return true;
-    },})
-    return;
-});
+  TasksCollection.allow({
+    insert () {
+      return true
+    }
+  })
+})
 
-Meteor.publish("tasks", function () {
-    return TasksCollection.find();
-});
+Meteor.publish('tasks', function () {
+  return TasksCollection.find()
+})

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { TTask, TasksCollection } from "/imports/api/TasksCollection";
-import { Task } from "./Task";
-import { TaskForm } from "./TaskForm";
-import { Meteor } from "meteor/meteor";
+import React, { useState } from 'react'
+import { type TTask, TasksCollection } from '/imports/api/TasksCollection'
+import { Task } from './Task'
+import { TaskForm } from './TaskForm'
+import { Meteor } from 'meteor/meteor'
 
-export const App = () => {
-    const [tasks, setTasks] = useState<TTask[]>([]);
+export const App = (): React.JSX.Element => {
+  const [tasks, setTasks] = useState<TTask[]>([])
 
-    Meteor.subscribe('tasks', ()=> {
-        setTasks(TasksCollection.find({}, {sort: {date: -1}}).fetch());
-    });
+  Meteor.subscribe('tasks', () => {
+    setTasks(TasksCollection.find({}, { sort: { date: -1 } }).fetch())
+  })
 
-    return (
+  return (
         <div>
             <h1>Welcome to Meteor!</h1>
 
@@ -23,5 +23,5 @@ export const App = () => {
                 ))}
             </ul>
         </div>
-    );
-};
+  )
+}
