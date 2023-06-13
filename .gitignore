@@ -1,0 +1,10 @@
+node_modules/
+
+settings-production.json
+settings.json
+
+mup.json
+mup.js
+.meteor/local
+*.tar.gz
+*.swp
