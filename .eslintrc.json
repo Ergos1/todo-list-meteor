@@ -16,6 +16,7 @@
         "react"
     ],
     "rules": {
-        "import/no-absolute-path": "off"
+        "import/no-absolute-path": "off",
+        "@typescript-eslint/indent": ["error", 4]
     }
 }
