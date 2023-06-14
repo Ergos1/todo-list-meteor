@@ -10,6 +10,9 @@ Meteor.startup(async () => {
         },
         update () {
             return true
+        },
+        remove () {
+            return true
         }
     })
 })
