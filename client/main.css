@@ -3,6 +3,11 @@ body {
     font-family: sans-serif;
 }
 
+.task {
+    display: flex;
+    gap: 10px;
+}
+
 .task-form {
     margin-top: 1rem;
 }

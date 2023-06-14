@@ -7,6 +7,9 @@ Meteor.startup(async () => {
     TasksCollection.allow({
         insert () {
             return true
+        },
+        update () {
+            return true
         }
     })
 })

@@ -9,7 +9,7 @@ export const TaskForm = (): React.JSX.Element => {
 
         if (text === '') return
 
-        TasksCollection.insert({ text, date: new Date() })
+        TasksCollection.insert({ text, date: new Date(), isChecked: false })
 
         setText('')
     }
