@@ -17,6 +17,7 @@ Meteor.startup(async () => {
     })
 })
 
-Meteor.publish('tasks', function () {
-    return TasksCollection.find()
+Meteor.publish('tasks', function (hideCompleted: boolean) {
+    const tasks = TasksCollection.find(hideCompleted ? { isChecked: { $eq: false } } : {})
+    return tasks
 })
